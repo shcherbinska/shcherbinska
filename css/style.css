@@ -342,10 +342,14 @@ footer {
         right: -80px;
     }
     .logo img {
-        width: 60%; 
+        width: 55%; 
     }
     .main-content {
-        width: 700px;  
+        width: 700px;
+        bottom: 110px;
+        left: 0px;
+        right: 0px; 
+        margin: 5px auto;
     }
     .artist-name {
         font-size: 86px;
@@ -386,10 +390,82 @@ footer {
             width: 8px;
             height: 8px;
         }
-    
-    .lang-raw {
+    footer {
+        padding-top: 25px; 
+        padding-bottom: 20px;
+    }
+    .footer-content {
+        width: 900px; 
+    }
+    .footer-social {font-size: 14px;}
+    .content-container {
+        box-sizing: border-box;
+        max-width: 900px;
+        padding: 100px 102px 45px;
+    }
+.item,
+.item-project {
+    margin-right: 30px;
+}
+}
+@media screen and (min-width:1500px) and (max-width:1800px) {
+    .logo {
+        bottom: 65px;
+        right: -50px;
+    }
+    .logo img {
+        width: 70%; 
+    }
+    .main-content {
+        width: 900px;
+        bottom: 115px;
+    }
+    .artist-name {
+        font-size: 110px; /* x */
+        line-height: 60px;
+    }
+    .artist-name:before {
+        bottom: 87px;  
+        font-size: 130px;  /* 1,186x */
+    }
+    .artist-name:after {
+        bottom: 52px;  
+        left: 360px;
+        font-size: 18px;  /* 0,163x */
+    }
+    .main-menu {
+        width: 1100px;
+    }
+    .main-menu>li {
+        font-size: 20px;
+        line-height: 26px;
+        margin: 0;
+        margin-right: -4px;
+        padding: 0;
+    }
+    .main-menu>li>a {
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+        .sub-menu {
+            left: 923px;
+            padding: 0;
+            font-size: 14px;
+            line-height: 25px;
+        }
+        .sub-menu a {
+                padding: 3px 3px; 
+            }
+        .sub-menu a:before {
+            font-size: 10px;
+            width: 10px;
+            height: 10px;
+        }
+    footer {padding-top: 25px; padding-bottom: 20px;}
+    .footer-content {
         width: 950px; 
     }
+    .footer-social {font-size: 14px;}
 }
 @media screen and (min-width:1900px) and (min-height:1100px) {
     .logo {
