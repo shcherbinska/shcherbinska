@@ -203,7 +203,6 @@ footer {
 
 .content-container {
     box-sizing: border-box;
-    min-width: 900px;
     max-width: 1200px;
     margin: 0 auto;
     padding: 125px 225px 55px;
@@ -336,6 +335,20 @@ footer {
 .content-row:last-child {margin-bottom: 60px;}
 .content-row p {float: left; margin: 0;}
 
+.content-fancy {
+    box-sizing: border-box;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 90px 10px 90px;
+    margin-bottom: 20px;
+}
+.fancybox {
+    display: inline-block;
+    float: left;
+    margin-right: 13px;
+    margin-bottom: 10px
+}
+.fancybox:nth-child(4n) {margin-right: 0;}
 @media screen and (max-width:1400px) {
     .logo {
         bottom: 65px;
@@ -529,4 +542,13 @@ footer {
     .content-container {
     padding: 145px 225px 395px;
     }
+    .content-fancy {
+    max-width: 1200px;
+    padding: 145px 105px 160px;
+    }
+.fancybox {
+    margin-right: 30px;
+    margin-bottom: 20px
+    }
+
 }
