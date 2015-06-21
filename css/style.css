@@ -343,12 +343,26 @@ footer {
     margin-bottom: 20px;
 }
 .fancybox {
+    position: relative;
     display: inline-block;
     float: left;
+    width: 220px;
+    height: 132px;
     margin-right: 13px;
-    margin-bottom: 10px
+    margin-bottom: 10px; 
 }
 .fancybox:nth-child(4n) {margin-right: 0;}
+.mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 220px;
+    height: 132px;
+    background-color: rgba(232,231,80, 0.4);
+    opacity: 0;
+}
+.fancybox:hover .mask {opacity: 1;}
+
 @media screen and (max-width:1400px) {
     .logo {
         bottom: 65px;
@@ -546,9 +560,11 @@ footer {
     max-width: 1200px;
     padding: 145px 105px 160px;
     }
-.fancybox {
+.fancybox {  
     margin-right: 30px;
     margin-bottom: 20px
     }
-
+    
+    
+    
 }
