@@ -259,6 +259,8 @@
         {   href : 'portfolio/real_prod/HEDDA_GABLER/28.jpg',                
             title : null   },
         {   href : 'portfolio/real_prod/HEDDA_GABLER/29.jpg',                
+            title : null   },
+        {   href : 'portfolio/real_prod/HEDDA_GABLER/30.jpg',                
             title : null   }
     ],
     10: [

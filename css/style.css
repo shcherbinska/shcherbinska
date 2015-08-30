@@ -447,18 +447,18 @@ footer {
         position: relative;
         display: inline-block;
         float: left;
-        width: 220px;
-        height: 132px;
-        margin-right: 13px;
-        margin-bottom: 10px; 
+        width: 290px;
+        height: 175px;
+        margin-right: 20px;
+        margin-bottom: 20px; 
     }
-    .fancybox:nth-child(4n) {margin-right: 0;}
+    .fancybox:nth-child(3n) {margin-right: 0;}
         .mask {
             position: absolute;
             top: 0;
             left: 0;
-            width: 220px;
-            height: 132px;
+            width: 290px;
+            height: 175px;
             background-color: rgba(232,231,80, 0.4);
             opacity: 0;
         }
