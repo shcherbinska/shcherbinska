@@ -264,9 +264,9 @@ footer {
 
 
 
-/* ----------------------------- *\
+/* ------------------------------------- *\
    Content: Pages with galleries
-\* ----------------------------- */
+\* ------------------------------------- */
 .content-container {
     box-sizing: border-box;
     max-width: 1200px;
@@ -328,9 +328,9 @@ footer {
 
 
 
-/* ----------------------------- *\
+/* -------------------------------------- *\
     Yellow Sub-header: About Me
-\* ----------------------------- */
+\* -------------------------------------- */
 .sub-header {
     background-color: #e2e768;
 }
@@ -391,9 +391,9 @@ footer {
 
 
 
-/* ----------------------------- *\
+/* ------------------------------ *\
         Content: About Me
-\* ----------------------------- */
+\* ------------------------------ */
 .content h3 {
     width: 265px;
     margin: 0 auto;
@@ -463,6 +463,12 @@ footer {
             opacity: 0;
         }
     .fancybox:hover .mask {opacity: 1;}
+.fancybox-title-float-wrap span.child {
+    color: #000;
+    text-transform: none;
+    text-shadow: none;
+    background-color: #999999;
+}
 
 
 
