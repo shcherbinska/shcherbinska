@@ -339,7 +339,7 @@ footer {
         padding-top: 75px;
         padding-left: 20px;
         padding-right: 20px;
-        max-width: 1295px;
+        max-width: 1360px;
         margin: 0 auto;
         }
     .sub-header-photo {
@@ -395,7 +395,14 @@ footer {
         Content: About Me
 \* ------------------------------ */
 .content h3 {
-    width: 265px;
+    width: 330px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    font-weight: normal;
+    border-bottom: 5px solid #e2e768;
+}
+.content h4 {
+    width:200px;
     margin: 0 auto;
     margin-bottom: 20px;
     font-weight: normal;
@@ -404,6 +411,7 @@ footer {
 .content-year {
     float: left; 
     width: 40px; 
+    margin-right: 5px;
     font-family: "Stencil", serif; 
     font-size: 18px; 
     line-height: 22px; 
