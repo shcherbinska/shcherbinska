@@ -91,10 +91,10 @@ body {
 }
     .main-navigation {
         background-color: #ffff66;
+        
     }
         .main-menu {
-            position: relative;
-            max-width: 1200px;
+            width: 1200px;
             margin: 0 auto;
             padding: 0;
             list-style: none;
@@ -103,20 +103,13 @@ body {
             .main-menu>li {
                 display: inline-block;
                 vertical-align: bottom;
+                position: relative;
                 padding: 0;
                 margin: 0;
                 margin-right: -4px;
                 font-family: "Minion Pro Cond", serif;
                 font-size: 22px;
                 line-height: 28px;   
-            }
-            /* Portfolio: not link */
-            .main-menu>li:nth-child(3) {
-                text-decoration: none;
-                padding-left: 35px;
-                padding-right: 35px;
-                color: #000;
-                cursor: default;
             }
                 .main-menu>li>a {
                     display: block;
@@ -125,19 +118,25 @@ body {
                     color: #000;
                     text-decoration: none;
                 }
-        
+                /* Portfolio: not a link */
+                .main-menu .nolink {
+                    padding-left: 35px;
+                    padding-right: 35px;
+                }
                 .main-menu a:hover,
-                .main-menu>li:nth-child(3):hover {
+                .main-menu>.nolink:hover {
                     color: #fff;
                     background-color: #000;   
                 }
-        .sub-menu {
+        .main-menu .sub-menu {
             z-index: 20;
             position: absolute;
-            right: -5px;
+            left: 0;
+            top: 24px;
             display: none;
             margin: 0;
-            padding: 10px 0 2px 0;
+            padding: 0;
+            width: 100%;
             font-size: 14px;
             line-height: 30px;
             text-align: left;
@@ -150,10 +149,12 @@ body {
             .sub-menu a {
                 z-index: 10;
                 display: block;
-                padding: 0 5px; 
+                padding: 0 10px; 
                 margin: 5px 0;
                 text-decoration: none; 
                 color: #000;
+                font-size: 12px;
+                line-height: 25px;
             }
             .sub-menu a:before {
                 content: "";
