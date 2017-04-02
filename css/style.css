@@ -479,6 +479,72 @@ footer {
     background-color: #999999;
 }
 
+/* --------------------------- *\
+           Handmade
+\* --------------------------- */
+.sticky-site {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+.handmade-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-grow: 1;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 9%;
+    padding-bottom: 60px;
+    background-image: url(../portfolio/handmade/art-pillows.png);
+    background-repeat: no-repeat;
+    background-position: center 30px;
+    background-size: 140px auto;
+}
+.handmade-gallery {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+.handmade-item {
+    width: 20%;
+    text-align: center;
+    margin: 0 5px;
+}
+.handmade-item-down {
+    align-self: flex-end;
+}
+.handmade-image {
+    margin: 0;
+    margin-bottom: 5px;
+    padding: 0;
+    width: 130px;
+    height: 130px;
+}
+.handmade-image:hover {
+    transform: scale(1.1);
+}
+.handmade-title {
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    line-height: 1;
+}
+.handmade-subtitle {
+    display: block;
+    font-size: 12px;
+    line-height: 1;
+}
+.footer-handmade {
+    position: inherit;
+    width: 100%;
+    padding: 35px 0 30px 0 ;
+    margin: 0;
+    background-color: #000;
+}
+
+
 
 
 /* ----------------------------- *\
@@ -548,9 +614,12 @@ footer {
         .footer-social {font-size: 14px;}
         .content-container {
             box-sizing: border-box;
-            max-width: 900px;
+            width: 900px;
             padding: 100px 102px 45px;
         }
+    .handmade-container {
+       width: 900px; 
+    }
     .item,
     .item-project {
         margin-right: 30px;
