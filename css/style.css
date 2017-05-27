@@ -94,7 +94,7 @@ body {
         
     }
         .main-menu {
-            width: 1200px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 0;
             list-style: none;
@@ -180,7 +180,7 @@ body {
     bottom: 130px;
     left: 0px;
     right: 0px;
-    width: 1000px;  
+    max-width: 1000px;  
     margin: 5px auto;
 }
     .artist-name {
@@ -221,7 +221,7 @@ footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 35px 0 30px 0 ;
+    padding: 20px 0 15px 0 ;
     margin: 0;
     background-color: #000;
 }
@@ -242,6 +242,9 @@ footer {
                 height: 32px;
                 margin-right: 15px;
                 margin-bottom: 5px;
+            }
+            .social-icon > img {
+                border-radius: 20%;
             }
         .lang-raw {
             float: right;
@@ -485,7 +488,7 @@ footer {
 .sticky-site {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+/*    min-height: 100vh;*/
 }
 .handmade-container {
     box-sizing: border-box;
@@ -495,12 +498,12 @@ footer {
     height: 100%;
     margin: 0 auto;
     padding: 0;
-    padding-top: 120px;
-    padding-bottom: 60px;
+    padding-top: 160px;
+    padding-bottom: 160px;
     background-image: url(../portfolio/handmade/art-pillows.png);
     background-repeat: no-repeat;
-    background-position: center 30px;
-    background-size: 140px auto;
+    background-position: center 60px;
+    background-size: 155px auto;
 }
 .handmade-gallery {
     display: flex;
@@ -513,14 +516,14 @@ footer {
     margin: 0 5px;
 }
 .handmade-item-down {
-    align-self: flex-end;
+    padding-top: 100px;
 }
 .handmade-image {
     margin: 0;
     margin-bottom: 5px;
     padding: 0;
-    width: 130px;
-    height: 130px;
+    width: 140px;
+    height: 140px;
 }
 .handmade-image:hover {
     transform: scale(1.1);
@@ -539,7 +542,7 @@ footer {
 .footer-handmade {
     position: inherit;
     width: 100%;
-    padding: 35px 0 30px 0 ;
+    padding: 20px 0 15px 0 ;
     margin: 0;
     background-color: #000;
 }
@@ -559,7 +562,7 @@ footer {
         width: 55%; 
     }
     .main-content {
-        width: 700px;
+        max-width: 700px;
         bottom: 110px;
         left: 0px;
         right: 0px; 
@@ -580,7 +583,7 @@ footer {
         font-size: 14px;
     }
     .main-menu {
-        width: 950px;
+        max-width: 950px;
     }
     .main-menu>li {
         font-size: 18px;
@@ -605,11 +608,11 @@ footer {
             height: 8px;
         }
     footer {
-        padding-top: 25px; 
-        padding-bottom: 20px;
+        padding-top: 20px; 
+        padding-bottom: 15px;
     }
         .footer-content {
-            width: 900px; 
+            max-width: 900px; 
         }
         .footer-social {font-size: 14px;}
         .content-container {
@@ -639,7 +642,7 @@ footer {
         width: 70%; 
     }
     .main-content {
-        width: 900px;
+        max-width: 900px;
         bottom: 115px;
     }
     .artist-name {
@@ -656,7 +659,7 @@ footer {
         font-size: 18px;  /* 0,163x */
     }
     .main-menu {
-        width: 1100px;
+        max-width: 1100px;
     }
     .main-menu>li {
         font-size: 20px;
@@ -685,8 +688,8 @@ footer {
             height: 10px;
         }
     footer {
-        padding-top: 25px; 
-        padding-bottom: 20px;
+        padding-top: 20px; 
+        padding-bottom: 15px;
     }
         .footer-content {
             width: 950px; 
@@ -707,7 +710,7 @@ footer {
         width: 115%; 
     }
     .main-content {
-        width: 1200px;
+        max-width: 1200px;
     }
     .artist-name {
         font-size: 146px;
@@ -724,7 +727,7 @@ footer {
         font-size: 24px;
     }
     .main-menu {
-        width: 1400px;
+        max-width: 1400px;
     }
     .main-menu>li {
         font-size: 26px;

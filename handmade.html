@@ -2,9 +2,12 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Main</title>
+        <title>Handmade by Olga Shcherbinskaya</title>
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
+        <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+        <script type="text/javascript" src="fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
     </head>
     
     <body class="sticky-site">
@@ -27,28 +30,28 @@
         
         <section class="handmade-container">
             <div class="handmade-gallery">
-                <div class="handmade-item">
+                <div class="handmade-item  open_fancybox">
                     <a href="#" class="handmade-link">
                       <img src="portfolio/handmade/winter.jpg" alt="" class="handmade-image" width="200" height="200">  
                     </a>
                     <h2 class="handmade-title">Winter</h2>
                     <span class="handmade-subtitle">collection</span>
                 </div>
-                <div class="handmade-item handmade-item-down">
+                <div class="handmade-item handmade-item-down  open_fancybox">
                     <a href="#" class="handmade-link">
                         <img src="portfolio/handmade/vinyl.jpg" alt="" class="handmade-image" width="200" height="200">
                     </a>
                     <h2 class="handmade-title">Music Vinyl</h2>
                     <span class="handmade-subtitle">collection</span>
                 </div>
-                <div class="handmade-item handmade-item-down">
+                <div class="handmade-item handmade-item-down  open_fancybox">
                     <a href="#" class="handmade-link">
                         <img src="portfolio/handmade/sailor.jpg" alt="" class="handmade-image" width="200" height="200">
                     </a>
                     <h2 class="handmade-title">Super Sailor</h2>
                     <span class="handmade-subtitle">collection</span>
                 </div>
-                <div class="handmade-item">
+                <div class="handmade-item  open_fancybox">
                     <a href="#" class="handmade-link">
                         <img src="/portfolio/handmade/valentines.jpg" alt="" class="handmade-image" width="200" height="200">
                     </a>
@@ -72,6 +75,8 @@
             </div>   
         </footer>
                     
+        <!-- Gallery -->
+        <script src="js/handmade.js"></script>
         <!-- Google analytics -->
         <script>
             (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
