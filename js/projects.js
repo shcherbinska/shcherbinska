@@ -64,9 +64,9 @@
             title: null},
         {   href: 'portfolio/scen_proj/THE_HEAD/7.jpg',                
             title: null},
-        {   href: 'portfolio/scen_proj/THE_HEAD/7.jpg',                
+        {   href: 'portfolio/scen_proj/THE_HEAD/8.jpg',                
             title: null},
-        {   href: 'portfolio/scen_proj/THE_HEAD/7.jpg',                
+        {   href: 'portfolio/scen_proj/THE_HEAD/9.jpg',                
             title: null}       
     ],
     3: [
