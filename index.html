@@ -6,14 +6,15 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/style.css">
     </head>
-    
+
     <body>
         <header class="main-header">
             <nav class="main-navigation">
-                 <ul class="main-menu">
+                 <ul class="main-menu container">
                      <li><a href="index.html">Home</a></li>
                      <li><a href="about_me.html">About me</a></li>
-                     <li class="nolink">Portfolio
+                     <li class="nolink">
+                         <span>Portfolio</span>
                          <ul class="sub-menu">
                             <li><a href="scenographic_projects.html">Scenographic projects</a></li>
                             <li><a href="realized_productions.html">Realized Productions</a></li>
@@ -24,28 +25,63 @@
                 </ul>
             </nav>
         </header>
-        
-        <div class="main-content">
-            <h1 class="artist-name">Shcherbinskaya</h1>
-            <div class="logo">
-                <img src="img/logo.png" alt="Olga's logo">
+
+        <main class="main-content container">
+            <div class="artist">
+                <div class="row">
+                    <h2 class="artist-name">Olga</h2>
+                    <p class="artist-desc">Artist / set and costume designer</p>
+                    <div class="artist-img"><img src="img/logo.png" alt="Olga's photo"></div>
+                </div>
+                <h1 class="artist-surname">Shcherbinskaya</h1>
             </div>
-        </div>
-        
-        <footer>
-           <div class="footer-content clearfix">
-            <div class="footer-social">
-                <a href="https://www.facebook.com/olga.shcherbinskaya" class="social-icon"><img src="img/fb-icon.png" alt="facebook profile"></a>
-                <a href="https://www.linkedin.com/pub/olga-shcherbinskaya/a4/175/b82" class="social-icon"><img src="img/in-icon.png" alt="linkedin profile"></a>
-                <div>olga.shcherbinskaya@gmail.com</div>
+        </main>
+
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-social">
+                        <a href="https://www.facebook.com/olga.shcherbinskaya" class="social-icon">
+                            <svg width="32" height="32" viewBox="0 0 510 510">
+                                <rect fill="#4267b2" width="510" height="510" x="0.40296674" y="1.4451494" rx="40" />
+                                <path fill="currentColor" d="m 443.99618,52.99599 v 76.5 h -51 c -15.3,0 -25.5,10.2 -25.5,25.5 v 51 h 76.5 v 76.5 h -76.5 v 178.5 h -76.5 v -178.5 h -51 v -76.5 h 51 v -63.75 c 0,-48.45 40.8,-89.25 89.25,-89.25 z"/>
+                            </svg>
+
+                        </a>
+                        <a href="https://www.linkedin.com/pub/olga-shcherbinskaya/a4/175/b82" class="social-icon">
+                            <svg viewBox="0 0 512 512" width="32" height="32">
+                                <rect fill="#0077b5" width="100%" height="100%" rx="40" />
+                                <path fill="#ffffff" d="M 154.55531,460.07577 H 72.857199 v -285.9434 h 81.698111 z m 0,-326.79245 H 72.857199 V 51.585208 H 154.55531 Z M 440.49876,460.07577 H 358.80065 V 296.67955 c 0,-22.52018 -18.32884,-40.84907 -40.84906,-40.84907 -22.52022,0 -40.84912,18.32889 -40.84912,40.84907 v 163.39622 h -81.69811 v -285.9434 h 81.69811 v 15.39818 c 21.40333,-6.65393 35.30686,-15.39818 61.27365,-15.39818 55.40685,0.0586 102.12264,49.76351 102.12264,108.5053 z"/>
+                            </svg>
+                        </a>
+                        <a class="footer-email" href="mailto:olga.shcherbinskaya@gmail.com">olga.shcherbinskaya@gmail.com</a>
+                    </div>
+                    <div class="lang-raw">
+                        <div class="lang">
+                            <svg viewBox="0 0 512 512" width="32" height="32">
+                                <circle style="fill:#F0F0F0;" cx="256" cy="256" r="256"/>
+                                <path style="fill:#0052B4;" d="M496.077,345.043C506.368,317.31,512,287.314,512,256s-5.632-61.31-15.923-89.043H15.923
+                                    C5.633,194.69,0,224.686,0,256s5.633,61.31,15.923,89.043L256,367.304L496.077,345.043z"/>
+                                <path style="fill:#D80027;" d="M256,512c110.071,0,203.906-69.472,240.077-166.957H15.923C52.094,442.528,145.929,512,256,512z"/>
+                            </svg>
+                        </div>
+                        <div class="lang">
+                            <svg width="32" height="32" viewBox="0 0 512 512">
+                                <circle cx="256" cy="256" r="256" fill="#f0f0f0"/>
+                                <g fill="#0052b4">
+                                    <path d="M52.92 100.142c-20.109 26.163-35.272 56.318-44.101 89.077h133.178L52.92 100.142zM503.181 189.219c-8.829-32.758-23.993-62.913-44.101-89.076l-89.075 89.076h133.176zM8.819 322.784c8.83 32.758 23.993 62.913 44.101 89.075l89.074-89.075H8.819zM411.858 52.921c-26.163-20.109-56.317-35.272-89.076-44.102v133.177l89.076-89.075zM100.142 459.079c26.163 20.109 56.318 35.272 89.076 44.102V370.005l-89.076 89.074zM189.217 8.819c-32.758 8.83-62.913 23.993-89.075 44.101l89.075 89.075V8.819zM322.783 503.181c32.758-8.83 62.913-23.993 89.075-44.101l-89.075-89.075v133.176zM370.005 322.784l89.075 89.076c20.108-26.162 35.272-56.318 44.101-89.076H370.005z"/>
+                                </g>
+                                <g fill="#d80027">
+                                    <path d="M509.833 222.609H289.392V2.167A258.556 258.556 0 0 0 256 0c-11.319 0-22.461.744-33.391 2.167v220.441H2.167A258.556 258.556 0 0 0 0 256c0 11.319.744 22.461 2.167 33.391h220.441v220.442a258.35 258.35 0 0 0 66.783 0V289.392h220.442A258.533 258.533 0 0 0 512 256c0-11.317-.744-22.461-2.167-33.391z"/>
+                                    <path d="M322.783 322.784L437.019 437.02a256.636 256.636 0 0 0 15.048-16.435l-97.802-97.802h-31.482v.001zM189.217 322.784h-.002L74.98 437.019a256.636 256.636 0 0 0 16.435 15.048l97.802-97.804v-31.479zM189.217 189.219v-.002L74.981 74.98a256.636 256.636 0 0 0-15.048 16.435l97.803 97.803h31.481zM322.783 189.219L437.02 74.981a256.328 256.328 0 0 0-16.435-15.047l-97.802 97.803v31.482z"/>
+                                </g>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="lang-raw">
-                <span class="lang lang-en"></span>
-                <span class="lang lang-ru"></span>
-            </div> 
-            </div>   
         </footer>
-                    
+
         <!-- Google analytics -->
         <script>
             (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
