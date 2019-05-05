@@ -1,0 +1,21 @@
+extends ./templates/_skeleton
+
+block vars
+	- var title = "Olga Shcherbinskaya Website"
+
+block content
+	.artist.container
+		h1.visually-hidden Olga Shcherbinskaya - artist / set and costume designer
+		.artist__inner
+			.artist__top
+				.artist__text
+					<svg width="650" height="102" viewBox="0 0 650 102">
+						<text x="-0.9" y="90" style="font-size: 123px; line-height: 0.68; font-weight: 700; font-family: 'Frank Ruhl Libre', serif">Olga</text>
+						<text x="335" y="90" style="font-size: 17px; line-height: 1; font-weight: 500; font-family: 'Frank Ruhl Libre', serif">Artist / set and costume designer</text>
+					</svg>
+				.artist__img
+					img(src="img/logo.png" alt="Olga's photo")
+			.artist__surname
+				<svg width="1124" height="86" viewBox="0 0 1124 86">
+					<text x="0" y="85" style="font-size: 126px; line-height: 1; font-weight: 700; font-family: 'Frank Ruhl Libre', serif">Shcherbinskaya</text>
+				</svg>

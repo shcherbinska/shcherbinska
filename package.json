@@ -1,0 +1,27 @@
+{
+  "name": "shcherbinska",
+  "version": "1.0.0",
+  "description": "portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel src/index.pug",
+    "build": "parcel build src/index.pug"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shcherbinska/shcherbinska.github.io.git"
+  },
+  "author": "Elianta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shcherbinska/shcherbinska.github.io/issues"
+  },
+  "homepage": "https://github.com/shcherbinska/shcherbinska.github.io#readme",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.3"
+  },
+  "dependencies": {
+    "pug": "^2.0.3",
+    "sass": "^1.17.3"
+  }
+}

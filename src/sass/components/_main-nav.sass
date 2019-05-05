@@ -1,0 +1,123 @@
+.main-nav
+	position: relative
+	background-color: $decor
+	+r($tablet)
+		box-shadow: 4px 4px 4px 0 rgba(171,168,168,0.2)
+
+.main-nav__inner
+	position: relative
+	display: flex
+	justify-content: flex-end
+	+r($l-mobile)
+		position: static
+
+.main-nav__list
+	display: flex
+	justify-content: flex-end
+	+r($tablet)
+		position: absolute
+		top: 100%
+		right: 0
+		flex-direction: column
+		min-width: 300px
+		padding: 10px 0 8px
+		background-color: $decor
+		box-shadow: 4px 4px 4px 0 rgba(171,168,168,0.2)
+	+r($l-mobile)
+		width: 100%
+	.main-nav__list
+		position: absolute
+		top: 100%
+		left: 0
+		z-index: 10
+		display: block
+		width: 100%
+		padding: 5px 0
+		box-shadow: none
+		background-color: $decor
+		opacity: 0
+		visibility: hidden
+		transform: translateY(15px)
+		transition: transform 0.3s ease-in, visibility 0s 0.2s, opacity 0.2s ease-in
+		+r($tablet)
+			position: static
+			opacity: 1
+			visibility: visible
+			transform: none
+			padding: 0
+		a
+			padding: 5px 10px 5px 21px
+			font-size: 12px
+			line-height: 1.4
+			+r($tablet)
+				padding: 7px 10px 7px 52px
+			&::before
+				content: ''
+				position: absolute
+				top: 9px
+				left: 9px
+				display: flex
+				width: 8px
+				height: 8px
+				background: $main
+				border-radius: 50%
+				+r($tablet)
+					top: 11px
+					left: 37px
+
+.main-nav__item
+	position: relative
+	a, & > span
+		position: relative
+		z-index: 1
+		display: flex
+		padding: 0 32px
+		font-size: 22px
+		line-height: calc(28/22)
+		color: $main
+		transition: color 0.2s 0.1s
+		+r($tablet)
+			padding: 6px 10px 6px 20px
+			padding-left: 20px
+		&:hover
+			color: $white
+			&:after
+				transform: none
+				transition: transform 0.3s ease-in, visibility 0s 0.2s, opacity 0.2s ease-in
+		&::after
+			content: ''
+			position: absolute
+			top: 0
+			left: 0
+			z-index: -1
+			width: 100%
+			height: 100%
+			background: $main
+			transform: scaleY(0)
+			transform-origin: 50% 100%
+			transition: transform 0.3s ease-in, visibility 0s 0.2s, opacity 0.2s ease-in
+	& > span
+		cursor: default
+	&:hover
+		.main-nav__list
+			opacity: 1
+			visibility: visible
+			transform: none
+			transition: transform 0.3s ease-out, visibility 0s, opacity 0.2s ease-out
+
+.main-nav__toggle
+	position: relative
+	width: 50px
+	height: 50px
+	display: none
+	+r($tablet)
+		display: block
+	&::after
+		content: ''
+		position: absolute
+		top: 12px
+		left: 10%
+		width: 80%
+		height: 4px
+		background: $main
+		box-shadow: 0px 10px 0px 0px $main, 0px 20px 0px 0px $main
