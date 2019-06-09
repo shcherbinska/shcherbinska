@@ -46,18 +46,17 @@ each modal in modals
 	.modal(id=modal.id).js-modal-close
 		.modal__container
 			button.modal__close.js-modal-close
-			.modal__inner
-				.gallery
-					.swiper-container.gallery__slider.js-portfolio-slider
-						.swiper-wrapper
-							- var i = 1;
-							while (i <= modal.imageNum)
-								if(i === 1)
-									.swiper-slide.gallery__item
-										img(src=`${modal.imagePath}${i}.jpg`, alt="")
-								else
-									.swiper-slide.gallery__item
-										img.swiper-lazy(data-src=`${modal.imagePath}${i}.jpg`, alt="")
-								- i++;
-						.gallery__button.gallery__button--prev
-						.gallery__button.gallery__button--next
+			.modal__inner.gallery
+				.swiper-container.gallery__slider.js-portfolio-slider
+					.swiper-wrapper
+						- var i = 1;
+						while (i <= modal.imageNum)
+							if(i === 1)
+								.swiper-slide.gallery__item
+									img(src=`${modal.imagePath}${i}.jpg`, alt="")
+							else
+								.swiper-slide.gallery__item
+									img.swiper-lazy(data-src=`${modal.imagePath}${i}.jpg`, alt="")
+							- i++;
+					.gallery__button.gallery__button--prev
+					.gallery__button.gallery__button--next

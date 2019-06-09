@@ -40,6 +40,7 @@
 			visibility: visible
 			pointer-events: all
 			transform: none
+			pointer-events: all
 			transition: opacity 0.3s ease, visibility 0s, transform 0.3s ease
 			& + .main-nav__toggle > .main-nav__toggle-inner
 				transition-delay: .22s
@@ -53,6 +54,8 @@
 					top: 0
 					transition: top .2s cubic-bezier(.33333,0,.66667,.33333),opacity .1s linear .22s
 					opacity: 0
+			.main-nav__list
+				pointer-events: all
 	+r($l-mobile)
 		top: calc(100% - 50px)
 		width: 100%
