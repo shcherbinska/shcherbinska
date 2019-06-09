@@ -2,6 +2,10 @@ extends ./templates/_skeleton
 
 block vars
 	- var title = "Scenography Projects by Olga Shcherbinskaya"
+	- var currentPage = "Scenographic projects"
 
-block main
-	p Scenography Projects by Olga Shcherbinskaya
+block content
+	include ./templates/sections/scenographic/_projects.pug
+
+block modals
+	include ./templates/sections/scenographic/_modals.pug

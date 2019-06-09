@@ -2,6 +2,10 @@ extends ./templates/_skeleton
 
 block vars
 	- var title = "Realized Productions by Olga Shcherbinskaya"
+	- var currentPage = "Realized Productions"
 
-block main
-	p Realized Productions by Olga Shcherbinskaya
+block content
+	include ./templates/sections/realized/_projects.pug
+
+block modals
+	include ./templates/sections/realized/_modals.pug

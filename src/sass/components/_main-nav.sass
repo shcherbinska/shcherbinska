@@ -1,15 +1,21 @@
 .main-nav
 	position: relative
+	text-transform: uppercase
 	background-color: $decor
 	+r($tablet)
 		box-shadow: 4px 4px 4px 0 rgba(171,168,168,0.2)
+	+r($l-mobile)
+		padding-top: 10px
 
 .main-nav__inner
 	position: relative
 	display: flex
 	justify-content: flex-end
+	+r($tablet)
+		justify-content: flex-start
 	+r($l-mobile)
 		position: static
+		justify-content: flex-end
 
 .main-nav__list
 	display: flex
@@ -17,14 +23,41 @@
 	+r($tablet)
 		position: absolute
 		top: 100%
-		right: 0
+		left: 0
+		z-index: 10
 		flex-direction: column
 		min-width: 300px
-		padding: 10px 0 8px
-		background-color: $decor
-		box-shadow: 4px 4px 4px 0 rgba(171,168,168,0.2)
+		padding: 10px 0 18px
+		background-color: $white
+		box-shadow: 0px 0px 15px 4px rgba(171,168,168,0.2)
+		opacity: 0
+		visibility: hidden
+		pointer-events: none
+		transform: translateY(20px)
+		transition: opacity 0.3s ease, visibility 0s 0.3s, transform 0.3s ease
+		&.visible
+			opacity: 1
+			visibility: visible
+			pointer-events: all
+			transform: none
+			transition: opacity 0.3s ease, visibility 0s, transform 0.3s ease
+			& + .main-nav__toggle > .main-nav__toggle-inner
+				transition-delay: .22s
+				transition-timing-function: cubic-bezier(.215,.61,.355,1)
+				transform: translate3d(0,-9px,0) rotate(-45deg)
+				&::before
+					top: 0
+					transition: top .1s cubic-bezier(.33333,0,.66667,.33333) .16s,transform .13s cubic-bezier(.215,.61,.355,1) .25s
+					transform: rotate(-90deg)
+				&::after
+					top: 0
+					transition: top .2s cubic-bezier(.33333,0,.66667,.33333),opacity .1s linear .22s
+					opacity: 0
 	+r($l-mobile)
+		top: calc(100% - 50px)
 		width: 100%
+		background: $decor
+		box-shadow: 0px 4px 6px 0px rgba(171,168,168,0.2)
 	.main-nav__list
 		position: absolute
 		top: 100%
@@ -41,11 +74,18 @@
 		transition: transform 0.3s ease-in, visibility 0s 0.2s, opacity 0.2s ease-in
 		+r($tablet)
 			position: static
+			padding: 0
 			opacity: 1
 			visibility: visible
 			transform: none
-			padding: 0
-		a
+			background: $white
+		+r($l-mobile)
+			background: $decor
+		.main-nav__item
+			+r($l-mobile)
+				width: 100%
+				margin-left: 0
+		a, span
 			padding: 5px 10px 5px 21px
 			font-size: 12px
 			line-height: 1.4
@@ -67,6 +107,9 @@
 
 .main-nav__item
 	position: relative
+	+r($l-mobile)
+		width: calc(90% - 60px)
+		margin-left: 5%
 	a, & > span
 		position: relative
 		z-index: 1
@@ -76,14 +119,17 @@
 		line-height: calc(28/22)
 		color: $main
 		transition: color 0.2s 0.1s
+		&.active
+			color: rgba($main, 0.5)
 		+r($tablet)
 			padding: 6px 10px 6px 20px
 			padding-left: 20px
-		&:hover
-			color: $white
-			&:after
-				transform: none
-				transition: transform 0.3s ease-in, visibility 0s 0.2s, opacity 0.2s ease-in
+		+notouch
+			&:hover:not(.active)
+				color: $white
+				&:after
+					transform: none
+					transition: transform 0.3s ease-in, visibility 0s 0.2s, opacity 0.2s ease-in
 		&::after
 			content: ''
 			position: absolute
@@ -107,17 +153,39 @@
 
 .main-nav__toggle
 	position: relative
+	z-index: 11
 	width: 50px
 	height: 50px
 	display: none
 	+r($tablet)
 		display: block
-	&::after
+
+.main-nav__toggle-inner
+	position: absolute
+	top: 32px
+	left: 10%
+	width: 80%
+	height: 4px
+	transition-delay: .13s
+	transition-timing-function: cubic-bezier(.55,.055,.675,.19)
+	transition-duration: .13s
+	transition-property: transform
+	border-radius: 4px
+	background-color: #000
+	&::before, &::after
 		content: ''
 		position: absolute
-		top: 12px
-		left: 10%
-		width: 80%
+		left: 0
+		width: 100%
 		height: 4px
-		background: $main
-		box-shadow: 0px 10px 0px 0px $main, 0px 20px 0px 0px $main
+		transition-timing-function: ease
+		transition-duration: .15s
+		transition-property: transform
+		border-radius: 4px
+		background-color: #000
+	&::before
+		top: -10px
+	&::after
+		top: -20px
+		bottom: -10px
+		transition: top .2s cubic-bezier(.33333,.66667,.66667,1) .2s,opacity .1s linear

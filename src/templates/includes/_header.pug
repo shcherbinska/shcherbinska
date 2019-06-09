@@ -1,21 +1,22 @@
 header.page-header
 	nav.main-nav
 		.container.main-nav__inner
-			ul.main-nav__list
+			ul.main-nav__list.js-menu
 				li.main-nav__item
-					a(href="index.pug") Home
-				li.main-nav__item
-					a(href="about.pug") About me
+					+link("index.pug", "Home")
+				//- li.main-nav__item
+				//- 	+link("about.pug", "About me")
 				li.main-nav__item
 					span Portfolio
 					ul.main-nav__list
 						li.main-nav__item
-							a(href="scenographic-projects.pug") Scenographic projects
+							+link("scenographic-projects.pug", "Scenographic projects")
 						li.main-nav__item
-							a(href="realized-productions.pug") Realized Productions
-						li.main-nav__item
-							a(href="painting.pug") Painting
-				li.main-nav__item
-					a(href="handmade.pug") Hand Made
+							+link("realized-productions.pug", "Realized Productions")
+						//- li.main-nav__item
+						//- 	+link("painting.pug", "Painting")
+				//- li.main-nav__item
+				//- 	+link("handmade.pug", "Hand Made")
 
-			button.main-nav__toggle(type="button")
+			button.main-nav__toggle.js-menu-toggle(type="button")
+				.main-nav__toggle-inner

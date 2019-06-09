@@ -1,0 +1,123 @@
+.modals
+	visibility: hidden
+	pointer-events: none
+
+.modal
+	position: fixed
+	top: 0
+	left: 0
+	bottom: 0
+	right: 0
+	z-index: 100
+	display: flex
+	justify-content: center
+	align-items: center
+	opacity: 0
+	visibility: hidden
+	pointer-events: none
+	transition: opacity 0.2s 0.2s, visibility 0s 0.35s
+	user-select: none
+	&--visible
+		pointer-events: all
+		opacity: 1
+		visibility: visible
+		transition: opacity 0.3s 0s, visibility 0s 0s
+		.modal__container:not(.modal__container--success)
+			z-index: 100
+			transform: scale(1)
+			opacity: 1
+			transition: transform 0.3s linear, opacity 0.3s linear
+
+.modal__container
+	position: absolute
+	top: 0
+	left: 0
+	display: inline-block
+	width: 100%
+	height: 100%
+	background: #000
+	opacity: 0
+	transform: scale(1.5)
+	transform-origin: 50% 50%
+	will-change: transform
+	transition: transform 0.2s 0s linear, opacity 0.2s 0s linear
+	scrollbar-color: $decor $bg-accent
+	scrollbar-width: thin
+	user-select: auto
+	&--success
+		height: auto
+		opacity: 0
+		visibility: hidden
+		pointer-events: none
+		transition: transform 0.2s 0s linear, opacity 0.2s 0s linear, visibility 0s 0.2s
+		+r($l-mobile)
+			height: auto
+
+.modal__inner
+	width: 100%
+	height: 100%
+	padding: 65px 70px 70px
+	overflow-x: hidden
+	overflow-y: auto
+	-ms-scroll-chaining: none
+	overscroll-behavior: contain
+	-webkit-overflow-scrolling: touch
+	scrollbar-color: $decor $bg-accent
+	scrollbar-width: thin
+	&::-webkit-scrollbar
+		background-color: $bg-accent
+		width: 5px
+		border-radius: 2px
+	&::-webkit-scrollbar-thumb
+		background-color: $decor
+		border-radius: 2px
+		&:hover
+			background-color: $decor-dark
+	+r($m-tablet)
+		padding: 60px 50px
+	+r($l-mobile)
+		padding: 30px 40px 30px 30px
+
+.modal__close
+	position: absolute
+	top: 20px
+	right: 20px
+	z-index: 2
+	width: 45px
+	height: 45px
+	color: $white
+	transition: color 0.3s ease
+	&:hover
+		color: rgba($grey, 0.6)
+	+r($l-mobile)
+		top: 10px
+		right: 10px
+	&::before, &::after
+		content: ''
+		position: absolute
+		top: 21px
+		left: 0
+		width: 100%
+		height: 1px
+		background: currentColor
+	&::before
+		transform: rotate(45deg)
+	&::after
+		transform: rotate(-45deg)
+
+.modal__title
+	margin-bottom: 15px
+	font-size: 24px
+	line-height: calc(30/24)
+	font-weight: 500
+	user-select: auto
+	+r($l-mobile)
+		font-size: 22px
+
+.modal__desc
+	margin-bottom: 15px
+
+.modal__btn.btn--big
+	margin-top: 20px
+	+r($l-mobile)
+		padding: 14px 20px

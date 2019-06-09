@@ -18,10 +18,20 @@
   },
   "homepage": "https://github.com/shcherbinska/shcherbinska.github.io#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.12.3"
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-lazy": "0.0.4"
   },
   "dependencies": {
+    "object-fit-images": "^3.2.4",
     "pug": "^2.0.3",
-    "sass": "^1.17.3"
-  }
+    "sass": "^1.17.3",
+    "swiper": "^4.5.0"
+  },
+  "browserslist": [
+    "last 1 version",
+    "> 1%",
+    "ie 11",
+    "not ie <= 10",
+    "not dead"
+  ]
 }

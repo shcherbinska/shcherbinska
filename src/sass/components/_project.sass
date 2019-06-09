@@ -1,0 +1,83 @@
+.project
+	position: relative
+	border-radius: 50%
+	&:hover
+		.project__content
+			color: $main
+			background: $decor
+
+.project__content
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 0
+	display: flex
+	justify-content: center
+	align-items: center
+	align-content: center
+	flex-wrap: wrap
+	width: 100%
+	height: 100%
+	padding: 10px
+	border-radius: 50%
+	color: $white
+	background: $main
+	cursor: pointer
+	transition: color 0.25s ease, background 0.3s ease
+	+r($l-mobile)
+		padding: 5px
+
+.project__title
+	width: 100%
+	margin-bottom: 10px
+	font-size: 32px
+	text-align: center
+	text-transform: uppercase
+	+r(1600)
+		font-size: 29px
+	+r($m-desktop)
+		margin-bottom: 8px
+		font-size: 24px
+	+r(1200)
+		font-size: 20px
+	+r($tablet)
+		font-size: 17px
+	+r($m-tablet)
+		font-size: 19px
+	+r($l-mobile)
+		margin-bottom: 5px
+		font-size: 20px
+	+r($s-mobile - 1)
+		font-size: 16px
+
+.project__author
+	width: 100%
+	text-align: center
+	font-size: 26px
+	+r(1600)
+		font-size: 24px
+	+r($m-desktop)
+		font-size: 20px
+	+r(1200)
+		font-size: 16px
+	+r($tablet)
+		font-size: 14px
+	+r($m-tablet)
+		font-size: 16px
+	+r($l-mobile)
+		font-size: 15px
+	+r($s-mobile - 1)
+		font-size: 13px
+
+.project__btn
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 1
+	width: 100%
+	height: 100%
+	border-radius: 50%
+	&:focus
+		& + .project__content
+			color: $main
+			background: $decor
