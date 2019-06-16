@@ -1,0 +1,92 @@
+.about
+
+.about__promo
+	padding-top: 65px
+	padding-bottom: 65px
+	background: $decor
+	+r($l-mobile)
+		padding-top: 40px
+		padding-bottom: 40px
+
+.about__row
+	display: flex
+	align-items: center
+	+r($m-tablet - 1)
+		flex-wrap: wrap
+
+.about__photo
+	position: relative
+	flex-shrink: 0
+	width: 250px
+	height: auto
+	margin-right: 40px
+	border-radius: 50%
+	overflow: hidden
+	background: red
+	&::after
+		content: ''
+		display: block
+		padding-top: 100%
+	+r($tablet)
+		width: 30%
+		margin-right: 25px
+	+r($m-tablet - 1)
+		width: 80%
+		max-width: 250px
+		margin: 0 auto 30px
+	& > img
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+
+.about__info
+	font-size: 18px
+	+r($tablet)
+		font-size: 16px
+	+r($m-tablet - 1)
+		width: 100%
+	p:not(:first-of-type)
+		margin-bottom: 5px
+
+.about__name
+	position: relative
+	display: inline-block
+	margin-bottom: 16px
+	font-size: 55px
+	line-height: 0.95
+	&::after
+		content: "Artist / set and costume designer"
+		position: absolute
+		top: 55px
+		right: 10px
+		font-size: 14px
+		line-height: 1
+		text-transform: uppercase
+		+r($tablet)
+			top: 5.8vw
+		+r($m-tablet - 1)
+			top: 8.9vw
+		+r($l-mobile)
+			top: 10vw
+		+r($mobile)
+			font-size: 12px
+		+r($s-mobile - 1)
+			font-size: 10px
+	+r($tablet)
+		font-size: 5.8vw
+	+r($m-tablet - 1)
+		font-size: 8.9vw
+	+r($l-mobile)
+		font-size: 10vw
+
+
+
+
+
+
+
+
+
+

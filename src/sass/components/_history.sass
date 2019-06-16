@@ -1,0 +1,54 @@
+.history
+	padding: 50px 0
+	+r($mobile)
+		padding: 40px 0
+
+.history__title
+	margin-bottom: 30px
+	text-align: center
+	+r($mobile)
+		margin-bottom: 15px
+	& > *
+		display: inline
+		font-size: 20px
+		line-height: 1.4
+		font-weight: 500
+		background: linear-gradient(to bottom, $decor, $decor)
+		background-size: 100% 0.4em
+		background-position: 0 0.8em
+		background-repeat: repeat-x
+	& ~ .history__title
+		margin-top: 40px
+
+.history__item
+	display: flex
+	align-items: flex-start
+	margin-bottom: 15px
+	+r($mobile)
+		flex-wrap: wrap
+
+.history__year
+	flex-shrink: 0
+	padding: 0 6px
+	margin-right: 5px
+	font-size: 22px
+	line-height: 1.4
+	font-weight: 700
+	color: $main
+	background: $decor
+	border-radius: 3px
+	+r($mobile)
+		margin-bottom: 10px
+		margin-top: 10px
+
+.history__desc
+	font-size: 18px
+	line-height: 1.4
+	font-weight: 400
+	+r($mobile)
+		font-size: 16px
+	p
+		margin-bottom: 5px
+
+.history__meta
+	color: rgb(146, 147, 142)

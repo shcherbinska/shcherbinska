@@ -4,5 +4,8 @@ block vars
 	- var title = "Biography"
 	- var currentPage = "About me"
 
+block header
+	+header()(class="page-header--about")
+
 block content
-	p test bio
+	include ./templates/sections/about/_content

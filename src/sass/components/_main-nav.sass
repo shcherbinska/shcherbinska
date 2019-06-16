@@ -3,9 +3,8 @@
 	text-transform: uppercase
 	background-color: $decor
 	+r($tablet)
+		padding: 10px 0
 		box-shadow: 4px 4px 4px 0 rgba(171,168,168,0.2)
-	+r($l-mobile)
-		padding-top: 10px
 
 .main-nav__inner
 	position: relative
@@ -22,7 +21,7 @@
 	justify-content: flex-end
 	+r($tablet)
 		position: absolute
-		top: 100%
+		top: calc(100% + 10px)
 		left: 0
 		z-index: 10
 		flex-direction: column
