@@ -1,8 +1,0 @@
-mixin link(href, text)
-	- var className = `${title}` === text ? 'active' : '';
-	if currentPage === text
-		span(class='active')&attributes(attributes)!=text
-			block
-	else
-		a(href=href)&attributes(attributes)!=text
-			block
