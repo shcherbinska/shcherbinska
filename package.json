@@ -1,37 +1,30 @@
 {
-  "name": "shcherbinska",
+  "name": "shcherbinska-rollup",
   "version": "1.0.0",
-  "description": "portfolio website",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "parcel src/index.pug",
-    "build": "parcel build src/index.pug"
+    "build": "gulp build",
+    "start": "gulp"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/shcherbinska/shcherbinska.github.io.git"
-  },
-  "author": "Elianta",
+  "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/shcherbinska/shcherbinska.github.io/issues"
-  },
-  "homepage": "https://github.com/shcherbinska/shcherbinska.github.io#readme",
   "devDependencies": {
-    "parcel-bundler": "^1.12.3",
-    "parcel-plugin-lazy": "0.0.4"
+    "rollup": "^1.26.3"
   },
   "dependencies": {
+    "@babel/core": "^7.6.4",
+    "@babel/preset-env": "^7.6.3",
+    "autoprefixer": "^9.7.1",
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-pug": "^4.0.1",
+    "gulp-sass": "^4.0.2",
     "object-fit-images": "^3.2.4",
-    "pug": "^2.0.3",
-    "sass": "^1.17.3",
-    "swiper": "^4.5.0"
-  },
-  "browserslist": [
-    "last 1 version",
-    "> 1%",
-    "ie 11",
-    "not ie <= 10",
-    "not dead"
-  ]
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "swiper": "^5.2.0"
+  }
 }

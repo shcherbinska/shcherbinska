@@ -1,20 +1,20 @@
-import Swiper from 'swiper/dist/js/swiper.js';
-import objectFitImages from 'object-fit-images';
-import './lib/domConf';
-import './lib/customEventPolyfill';
-import './lib/forEachPolyfill';
-import setupModals from './custom/setupModals';
-import menu from './custom/menu';
+import Swiper from "swiper";
+import objectFitImages from "object-fit-images";
+import "./lib/domConf";
+import "./lib/customEventPolyfill";
+import "./lib/forEachPolyfill";
+import setupModals from "./custom/setupModals";
+import menu from "./custom/menu";
 
-document.addEventListener('DOMContentLoaded',() => {
+document.addEventListener("DOMContentLoaded", () => {
   // get scrollbar width
   window.DOM.getScrollWidth();
   setupModals();
   menu();
-  const galleries = document.querySelectorAll('.js-portfolio-slider');
-  galleries.forEach((gallery) => {
+  const galleries = document.querySelectorAll(".js-portfolio-slider");
+  galleries.forEach(gallery => {
     let slider = new Swiper(gallery, {
-      slidesPerView: 'auto',
+      slidesPerView: "auto",
       lazy: {
         loadPrevNext: true
       },
@@ -22,15 +22,21 @@ document.addEventListener('DOMContentLoaded',() => {
       watchOverflow: true,
       keyboard: true,
       navigation: {
-        nextEl: '.gallery__button--next',
-        prevEl: '.gallery__button--prev',
-        disabledClass: 'gallery__button--disabled'
-      },
+        nextEl: ".gallery__button--next",
+        prevEl: ".gallery__button--prev",
+        disabledClass: "gallery__button--disabled"
+      }
     });
-    document.addEventListener('openModal', () => {slider.update();});
-  })
+    document.addEventListener("openModal", e => {
+      slider.update();
+      if (e.detail !== null) {
+        slider.slideTo(+e.detail - 1, 0);
+      }
+      console.log(e.detail);
+    });
+  });
 
   setTimeout(() => {
     objectFitImages();
   }, 0);
-})
+});

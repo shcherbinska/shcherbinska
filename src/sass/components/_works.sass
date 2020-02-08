@@ -1,0 +1,30 @@
+.works
+	padding-top: 125px
+	padding-bottom: 100px
+	overflow: hidden
+	+r($tablet)
+		padding-top: 85px
+		padding-bottom: 85px
+	+r($l-mobile)
+		padding-top: 50px
+		padding-bottom: 50px
+
+.works__list
+	display: flex
+	flex-wrap: wrap
+	width: calc(100% + 20px)
+	+r($mobile)
+		width: calc(100% + 15px)
+
+.works__item
+	width: calc((100% - 20px * 3) / 3)
+	margin-right: 20px
+	margin-bottom: 20px
+	+r($m-tablet)
+		width: calc((100% - 20px * 2) / 2)
+	+r($mobile)
+		width: calc((100% - 15px * 2) / 2)
+		margin-right: 15px
+		margin-bottom: 15px
+	+r($s-mobile)
+		width: calc(100% - 20px)

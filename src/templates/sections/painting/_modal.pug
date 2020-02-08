@@ -1,0 +1,54 @@
+-
+	let imagesNum = 27;
+	let imagesPath = "/img/portfolio/painting/";
+	let captions = [
+		"&laquo;Warm evening&raquo; 2011.  Oil on canvas, 42x32 сm",
+		"&laquo;Magic night&raquo; 2011.  Oil on canvas,  38x29 cm",
+		"&laquo;N Street&raquo; 2011.  Oil on canvas,  75x52 cm",
+		"&laquo;The house №5&raquo; 2011.  Oil on canvas,  50x40 cm",
+		"&laquo;Sunday morning&raquo; 2009.  Oil on primed paper,  20x28 cm",
+		"&laquo;Blue Sunday&raquo; 2015.  Oil on canvas,  45x35 cm",
+		"&laquo;The lake&raquo; 2009.  Oil on primed paper,  20x28 cm",
+		"&laquo;House at the sea&raquo; 2016.  Oil on canvas, 30х40 cm",
+		"&laquo;Silence Island&raquo; 2016.  Oil on canvas, 90х80 cm",
+		"&laquo;Blue Beach&raquo; 2013.  Oil on canvas, 90х72 cm",
+		"&laquo;Pastele&raquo; 2015.  Oil on canvas, 60х80 cm",
+		"&laquo;Church of St. Roch&raquo; 2010.  Oil on primed paper, 60x80 cm",
+		"&laquo;Golden lake melody&raquo; 2015.  Oil on canvas, 50х75 cm",
+		"&laquo;Reflection&raquo; 2010.  Oil on canvas, 30х33 cm",
+		"&laquo;Autumn bouquet&raquo; 2012.  Oil on canvas, 19х26 cm",
+		"&laquo;Walk on my bike&raquo; 2015.  Oil on canvas, 50х60 cm",
+		"&laquo;Successful hunt&raquo; 2016.  Oil on canvas, 60х60 cm",
+		"&laquo;White Rose&raquo; 2016.  Oil on canvas, 26х34 cm",
+		"&laquo;Night lake&raquo; 2015.  Oil on canvas, 50х40 cm",
+		"&laquo;Blues&raquo; 2016.  Oil on canvas, 50х70 cm",
+		"&laquo;Playful mood&raquo; 2007.  Oil on canvas",
+		"&laquo;Autumn in Druskininkai&raquo; 2015.  Oil on canvas, 50х60 cm",
+		"&laquo;Lilac mood&raquo; 2016.  Oil on canvas, 30х40 cm",
+		"&laquo;The solar symphony&raquo; 2016.  Oil on canvas, 30х40 cm",
+		"&laquo;Morning bouquet&raquo; 2016.  Oil on canvas, 19х26 cm",
+		"&laquo;The pions&raquo; 2016.  Oil on canvas, 45х65 cm",
+		"&laquo;Sleeping girl&raquo; 2016.  Oil on canvas, 60х60 cm",
+	]
+
+
+
+.modal(id='painting-modal').js-modal-close
+	.modal__container
+		button.modal__close.js-modal-close
+		.modal__inner.gallery
+			.swiper-container.gallery__slider.js-portfolio-slider
+				.swiper-wrapper
+					- var i = 1;
+					while (i <= imagesNum)
+						if(i === 1)
+							.swiper-slide.gallery__item
+								img(src=`${imagesPath}${i}.jpg`, alt="")
+								.gallery__text!=captions[i]
+						else
+							.swiper-slide.gallery__item
+								img.swiper-lazy(data-src=`${imagesPath}${i}.jpg`, alt="")
+								.gallery__text!=captions[i]
+						- i++;
+				.gallery__button.gallery__button--prev
+				.gallery__button.gallery__button--next

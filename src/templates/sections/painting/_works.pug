@@ -1,0 +1,13 @@
+-
+	let  number = 27;
+	let path = "/img/portfolio/painting/mini/";
+
+
+.works.container
+	ul.works__list
+		- var i = 1;
+			while (i <= number)
+				li.work.works__item
+					button.work__btn.js-modal-trigger(data-modal="painting-modal", data-open-selected=`${i}`, tabindex="0")
+					img.work__img(src=`${path}${i}.jpg`, alt="")
+				- i++;
