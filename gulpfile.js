@@ -53,9 +53,19 @@ gulp.task("build:images", () => {
     .pipe(gulp.dest("build/img"));
 });
 
+gulp.task("build:cname", () => {
+  return gulp.src("CNAME").pipe(gulp.dest("build"));
+});
+
 gulp.task(
   "build",
-  gulp.parallel("build:pug", "build:scss", "build:js", "build:images")
+  gulp.parallel(
+    "build:pug",
+    "build:scss",
+    "build:js",
+    "build:images",
+    "build:cname"
+  )
 );
 
 gulp.task("serve", () => {
