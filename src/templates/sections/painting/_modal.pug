@@ -1,5 +1,4 @@
 -
-	let imagesNum = 27;
 	let imagesPath = "/img/portfolio/painting/";
 	let captions = [
 		"&laquo;Warm evening&raquo; 2011.  Oil on canvas, 42x32 сm",
@@ -39,15 +38,15 @@
 		.modal__inner.gallery
 			.swiper-container.gallery__slider.js-portfolio-slider
 				.swiper-wrapper
-					- var i = 1;
-					while (i <= imagesNum)
-						if(i === 1)
+					- var i = 0;
+					while (i <= captions.length - 1)
+						if(i === 0)
 							.swiper-slide.gallery__item
-								img(src=`${imagesPath}${i}.jpg`, alt="")
+								img(src=`${imagesPath}${i+1}.jpg`, alt="")
 								.gallery__text!=captions[i]
 						else
 							.swiper-slide.gallery__item
-								img.swiper-lazy(data-src=`${imagesPath}${i}.jpg`, alt="")
+								img.swiper-lazy(data-src=`${imagesPath}${i+1}.jpg`, alt="")
 								.gallery__text!=captions[i]
 						- i++;
 				.gallery__button.gallery__button--prev
