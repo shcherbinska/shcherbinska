@@ -1,5 +1,5 @@
 export default function setupModals() {
-  document.body.addEventListener("click", function(e) {
+  document.body.addEventListener("click", function (e) {
     let target = e.target;
     if (window.DOM.modalActive && target === window.DOM.modalActive) {
       closeModal();
@@ -40,7 +40,7 @@ export default function setupModals() {
     } catch (e) {}
   }
 
-  document.addEventListener("keydown", e => {
+  document.addEventListener("keydown", (e) => {
     if (e.keyCode === 27 && window.DOM.modalActive) {
       closeModal();
     }
@@ -53,10 +53,8 @@ export function openModal(targetID, target) {
   modal.classList.add("modal--visible");
   window.DOM.hideScroll();
 
-  console.log("dispatch", target);
   const details = { detail: null };
   if (target.dataset.openSelected) {
-    console.log(target.dataset.openSelected);
     details.detail = target.dataset.openSelected;
   }
 
