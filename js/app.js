@@ -8845,13 +8845,11 @@
       window.DOM.modalActive = modal;
       modal.classList.add("modal--visible");
       window.DOM.hideScroll();
-      console.log("dispatch", target);
       var details = {
         detail: null
       };
 
       if (target.dataset.openSelected) {
-        console.log(target.dataset.openSelected);
         details.detail = target.dataset.openSelected;
       } // dispatch event each time modal is visible
 
@@ -8902,6 +8900,7 @@
       var galleries = document.querySelectorAll(".js-portfolio-slider");
       galleries.forEach(function (gallery) {
         var slider = new Swiper(gallery, {
+          initialSlide: 0,
           slidesPerView: "auto",
           lazy: {
             loadPrevNext: true
@@ -8920,9 +8919,9 @@
 
           if (e.detail !== null) {
             slider.slideTo(+e.detail - 1, 0);
+          } else {
+            slider.slideTo(0, 0);
           }
-
-          console.log(e.detail);
         });
       });
       setTimeout(function () {
