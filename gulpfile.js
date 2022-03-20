@@ -1,18 +1,15 @@
-let gulp = require("gulp");
-let pug = require("gulp-pug");
-let sass = require("gulp-sass");
-let postcss = require("gulp-postcss");
-let rollup = require("rollup");
-let resolve = require("rollup-plugin-node-resolve");
-let babel = require("rollup-plugin-babel");
-let browserSync = require("browser-sync").create();
-let commonjs = require("rollup-plugin-commonjs");
+const gulp = require("gulp");
+const pug = require("gulp-pug");
+const sass = require("gulp-sass")(require("sass"));
+const postcss = require("gulp-postcss");
+const rollup = require("rollup");
+const resolve = require("rollup-plugin-node-resolve");
+const babel = require("rollup-plugin-babel");
+const browserSync = require("browser-sync").create();
+const commonjs = require("rollup-plugin-commonjs");
 
 gulp.task("build:pug", () => {
-  return gulp
-    .src("src/*.pug")
-    .pipe(pug())
-    .pipe(gulp.dest("build"));
+  return gulp.src("src/*.pug").pipe(pug()).pipe(gulp.dest("build"));
 });
 
 gulp.task("build:scss", () => {
@@ -32,14 +29,14 @@ gulp.task("build:js", () => {
         commonjs(),
         babel({
           // exclude: [/node_modules\/(?!(swiper|dom7)\/).*/]
-          exclude: "node_modules/**/*"
-        })
-      ]
+          exclude: "node_modules/**/*",
+        }),
+      ],
     })
-    .then(bundle => {
+    .then((bundle) => {
       return bundle.write({
         file: "build/js/app.js",
-        format: "iife"
+        format: "iife",
       });
     });
 });
@@ -48,7 +45,7 @@ gulp.task("build:images", () => {
   return gulp
     .src("src/img/**/*", {
       dot: true,
-      allowEmpty: true
+      allowEmpty: true,
     })
     .pipe(gulp.dest("build/img"));
 });
@@ -71,8 +68,8 @@ gulp.task(
 gulp.task("serve", () => {
   browserSync.init({
     server: {
-      baseDir: "build"
-    }
+      baseDir: "build",
+    },
   });
 });
 
