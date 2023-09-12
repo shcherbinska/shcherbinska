@@ -8705,9 +8705,9 @@
       modalActive: null,
       modalsContainer: document.querySelector('#modals'),
       // need to be called on page load
-      getScrollWidth: function getScrollWidth() {
+      getScrollWidth: function () {
         // Узнаем ширину скролл панели
-        var div = document.createElement('div');
+        const div = document.createElement('div');
         div.style.overflowY = 'scroll';
         div.style.width = '50px';
         div.style.height = '50px';
@@ -8716,17 +8716,17 @@
         this.scrollWidth = div.offsetWidth - div.clientWidth;
         this.html.removeChild(div);
       },
-      checkPassive: function checkPassive() {
+      checkPassive: function () {
         try {
-          var options = Object.defineProperty({}, 'passive', {
-            get: function get() {
+          let options = Object.defineProperty({}, 'passive', {
+            get: () => {
               window.DOM.passiveSupported = true;
             }
           });
           window.addEventListener('test', null, options);
         } catch (err) {}
       },
-      hideScroll: function hideScroll() {
+      hideScroll: function () {
         if (this.body.offsetHeight < this.body.scrollHeight) {
           this.body.style.paddingRight = this.scrollWidth + 'px';
         }
@@ -8736,12 +8736,12 @@
         window.scroll(0, this.bodyScrollTop);
         this.body.classList.add('modal_open');
       },
-      passiveOrNot: function passiveOrNot() {
+      passiveOrNot: () => {
         return window.DOM.passiveSupported ? {
           passive: true
         } : false;
       },
-      showScroll: function showScroll() {
+      showScroll: function () {
         if (!this.body.classList.contains('menu_open')) {
           this.body.classList.remove('modal_open');
           this.bodyScrollTop && window.scroll(0, this.bodyScrollTop);
@@ -8749,11 +8749,11 @@
           this.body.style.paddingRight = '';
         }
       },
-      addListenerMulti: function addListenerMulti(el, s, fn) {
-        s.split(' ').forEach(function (e) {
-          return el.addEventListener(e, fn, window.DOM.passiveOrNot());
-        });
+
+      addListenerMulti(el, s, fn) {
+        s.split(' ').forEach(e => el.addEventListener(e, fn, window.DOM.passiveOrNot()));
       }
+
     };
 
     /**
@@ -8790,7 +8790,7 @@
 
     function setupModals() {
       document.body.addEventListener("click", function (e) {
-        var target = e.target;
+        let target = e.target;
 
         if (window.DOM.modalActive && target === window.DOM.modalActive) {
           closeModal();
@@ -8804,7 +8804,7 @@
 
         if (window.DOM.modalActive && target.classList.contains("js-modal-trigger")) {
           closeModal();
-          setTimeout(function () {
+          setTimeout(() => {
             checkTriggerClick(e);
           }, 300);
           return;
@@ -8814,7 +8814,7 @@
       });
 
       function checkTriggerClick(e) {
-        var target = e.target;
+        let target = e.target;
 
         try {
           while (target !== this) {
@@ -8834,37 +8834,44 @@
         } catch (e) {}
       }
 
-      document.addEventListener("keydown", function (e) {
+      document.addEventListener("keydown", e => {
         if (e.keyCode === 27 && window.DOM.modalActive) {
           closeModal();
         }
       });
     }
     function openModal(targetID, target) {
-      var modal = window.DOM.modalsContainer.querySelector("#".concat(targetID));
+      const modal = window.DOM.modalsContainer.querySelector(`#${targetID}`);
       window.DOM.modalActive = modal;
       modal.classList.add("modal--visible");
       window.DOM.hideScroll();
-      var details = {
-        detail: null
+      const details = {
+        detail: {
+          modalId: targetID
+        }
       };
 
       if (target.dataset.openSelected) {
-        details.detail = target.dataset.openSelected;
+        details.detail.openSelected = target.dataset.openSelected;
       } // dispatch event each time modal is visible
 
 
-      var openModalEvent = new CustomEvent("openModal", details);
+      let openModalEvent = new CustomEvent("openModal", details);
       document.dispatchEvent(openModalEvent);
     }
     function closeModal() {
+      const targetID = window.DOM.modalActive.id;
       window.DOM.modalActive.classList.remove("modal--visible");
       window.DOM.modalActive.classList.remove("modal--success");
       window.DOM.modalActive = null;
-      setTimeout(function () {
-        window.DOM.showScroll(); // dispatch event each time modal is closed
-
-        var closeModalEvent = new CustomEvent("closeModal");
+      setTimeout(() => {
+        window.DOM.showScroll();
+        const details = targetID ? {
+          detail: {
+            modalId: targetID
+          }
+        } : undefined;
+        let closeModalEvent = new CustomEvent("closeModal", details);
         document.dispatchEvent(closeModalEvent);
       }, 300);
       document.body.removeEventListener("touchmove", preventMobileScroll);
@@ -8877,10 +8884,10 @@
 
     function menu() {
       // simpliest menu example
-      var menuToggle = document.querySelectorAll('.js-menu-toggle');
+      let menuToggle = document.querySelectorAll('.js-menu-toggle');
       window.DOM.menu = document.querySelector('.js-menu'); // using passive events
 
-      menuToggle.forEach(function (item) {
+      menuToggle.forEach(item => {
         item.addEventListener('click', toggleClassMenu, window.DOM.passiveOrNot());
       });
     }
@@ -8892,39 +8899,65 @@
       }
     }
 
-    document.addEventListener("DOMContentLoaded", function () {
+    document.addEventListener("DOMContentLoaded", () => {
       // get scrollbar width
       window.DOM.getScrollWidth();
       setupModals();
       menu();
-      var galleries = document.querySelectorAll(".js-portfolio-slider");
-      galleries.forEach(function (gallery) {
-        var slider = new Swiper(gallery, {
-          initialSlide: 0,
-          slidesPerView: "auto",
-          lazy: {
-            loadPrevNext: true
-          },
-          preloadImages: false,
-          watchOverflow: true,
-          keyboard: true,
-          navigation: {
-            nextEl: ".gallery__button--next",
-            prevEl: ".gallery__button--prev",
-            disabledClass: "gallery__button--disabled"
-          }
-        });
-        document.addEventListener("openModal", function (e) {
-          slider.update();
+      const sliders = {};
+      document.addEventListener("openModal", e => {
+        var _e$detail, _e$detail2;
 
-          if (e.detail !== null) {
-            slider.slideTo(+e.detail - 1, 0);
+        const modalId = ((_e$detail = e.detail) === null || _e$detail === void 0 ? void 0 : _e$detail.modalId) || null;
+        const openSelected = ((_e$detail2 = e.detail) === null || _e$detail2 === void 0 ? void 0 : _e$detail2.openSelected) || null;
+
+        if (modalId) {
+          const gallery = document.querySelector(`[data-modal-id="${modalId}"]`);
+          const slider = new Swiper(gallery, {
+            initialSlide: 0,
+            slidesPerView: "auto",
+            lazy: {
+              loadPrevNext: true
+            },
+            preloadImages: false,
+            watchOverflow: true,
+            keyboard: true,
+            autoplay: {
+              delay: 3000
+            },
+            effect: "fade",
+            navigation: {
+              nextEl: ".gallery__button--next",
+              prevEl: ".gallery__button--prev",
+              disabledClass: "gallery__button--disabled"
+            }
+          });
+          slider.update();
+          sliders[modalId] = slider;
+          const video = gallery.querySelector("video");
+
+          if (video) {
+            video.currentTime = 0;
+          }
+
+          if (openSelected !== null) {
+            slider.slideTo(+openSelected - 1, 0);
           } else {
             slider.slideTo(0, 0);
           }
-        });
+        }
       });
-      setTimeout(function () {
+      document.addEventListener("closeModal", e => {
+        var _e$detail3;
+
+        const modalId = ((_e$detail3 = e.detail) === null || _e$detail3 === void 0 ? void 0 : _e$detail3.modalId) || null;
+
+        if (modalId) {
+          const slider = sliders[modalId];
+          slider.destroy();
+        }
+      });
+      setTimeout(() => {
         ofi_commonJs();
       }, 0);
     });
