@@ -1,10 +1,13 @@
 mixin projects(projects = [])
-	ul.projects.container
+	ul.projects
 		each project in projects
-			- var { title, author, modal } = project
-			li.project.projects__item
-				button.project__btn.js-modal-trigger(data-modal=modal, tabindex="0")
+			- var { id, title, author, preview, mobileOrder } = project
+			li.project.projects__item(style=`--mobile-order: ${mobileOrder};`)
+				button.project__btn.js-modal-trigger(data-modal=id, tabindex="0")
+				.project__img
+					img(src=preview, alt="")
+				.project__overlay
 				.project__content
-					h2.project__title!=`&laquo;${title}&raquo`
+					h2.project__title!=title
 					if author
 						p.project__author=author

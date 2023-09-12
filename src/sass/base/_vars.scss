@@ -1,10 +1,12 @@
 // COLORS
-$main: #000000;
+$main: #030403;
+$header: #c9caca;
 $decor: #ffff66;
 $decor-dark: #e2e768;
 $bg-accent: #fbfbf9;
 $white: #ffffff;
 $grey: #999999;
+$divider: #6c7072;
 // END COLORS
 
 // Media
@@ -17,5 +19,10 @@ $tablet: 1024;
 $s-desktop: 1280;
 $m-desktop: 1440;
 
-$max-content-width: 1400px;
+$max-content-width: 1520px;
 $scroll-width: calc(100vw - 100%);
+
+// FONTS
+$manjari: "Manjari", sans-serif;
+$roboto-cond: "Roboto Condensed", sans-serif;
+$staatliches: "Staatliches", cursive;

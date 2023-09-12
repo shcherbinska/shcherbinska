@@ -1,0 +1,26 @@
+.sign
+	font-family: $manjari
+	font-weight: 400
+	text-align: center
+
+.sign__line
+	font-size: 12px
+	&:not(:last-child)
+		margin-bottom: 4px
+	+r($l-mobile)
+		font-size: 10px
+		&:not(:last-child)
+			margin-bottom: 3px
+
+	&--main
+		&:not(:last-child)
+			margin-bottom: 6px
+		font-weight: 700
+		font-size: 14px
+		+r($l-mobile)
+			font-size: 12px
+		strong
+			font-size: 16px
+			text-transform: uppercase
+			+r($l-mobile)
+				font-size: 13px

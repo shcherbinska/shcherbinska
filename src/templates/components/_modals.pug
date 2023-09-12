@@ -1,0 +1,28 @@
+mixin modals(modals = [])
+	each modal in modals
+		- var { id, imageNum, imagePath, videoPos, videoDur=3000, sign } = modal
+		.modal(id=id).js-modal-close
+			.modal__container
+				button.modal__close.js-modal-close
+				.modal__inner.gallery
+					.swiper-container.gallery__slider.js-portfolio-slider(data-modal-id=id)
+						.swiper-wrapper
+							- var i = 1;
+							while (i <= imageNum)
+								if(videoPos === i)
+									.swiper-slide.gallery__item(data-swiper-autoplay=videoDur)
+										video(loop, muted, playsinline, autoplay)
+											source(src=`${imagePath}${i}.mp4`, type="video/mp4")
+								else if(i === 1)
+									.swiper-slide.gallery__item
+										img(src=`${imagePath}${i}.jpg`, alt="")
+								else
+									.swiper-slide.gallery__item
+										img.swiper-lazy(data-src=`${imagePath}${i}.jpg`, alt="")
+								- i++;
+						.gallery__button.gallery__button--prev
+						.gallery__button.gallery__button--next
+					if sign
+						.gallery__sign.sign!=sign
+
+

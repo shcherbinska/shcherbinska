@@ -11,31 +11,55 @@ document.addEventListener("DOMContentLoaded", () => {
   window.DOM.getScrollWidth();
   setupModals();
   menu();
-  const galleries = document.querySelectorAll(".js-portfolio-slider");
-  galleries.forEach((gallery) => {
-    let slider = new Swiper(gallery, {
-      initialSlide: 0,
-      slidesPerView: "auto",
-      lazy: {
-        loadPrevNext: true,
-      },
-      preloadImages: false,
-      watchOverflow: true,
-      keyboard: true,
-      navigation: {
-        nextEl: ".gallery__button--next",
-        prevEl: ".gallery__button--prev",
-        disabledClass: "gallery__button--disabled",
-      },
-    });
-    document.addEventListener("openModal", (e) => {
+  const sliders = {};
+
+  document.addEventListener("openModal", (e) => {
+    const modalId = e.detail?.modalId || null;
+    const openSelected = e.detail?.openSelected || null;
+
+    if (modalId) {
+      const gallery = document.querySelector(`[data-modal-id="${modalId}"]`);
+      const slider = new Swiper(gallery, {
+        initialSlide: 0,
+        slidesPerView: "auto",
+        lazy: {
+          loadPrevNext: true,
+        },
+        preloadImages: false,
+        watchOverflow: true,
+        keyboard: true,
+        autoplay: {
+          delay: 3000,
+        },
+        effect: "fade",
+        navigation: {
+          nextEl: ".gallery__button--next",
+          prevEl: ".gallery__button--prev",
+          disabledClass: "gallery__button--disabled",
+        },
+      });
       slider.update();
-      if (e.detail !== null) {
-        slider.slideTo(+e.detail - 1, 0);
+      sliders[modalId] = slider;
+      const video = gallery.querySelector("video");
+      if (video) {
+        video.currentTime = 0;
+      }
+
+      if (openSelected !== null) {
+        slider.slideTo(+openSelected - 1, 0);
       } else {
         slider.slideTo(0, 0);
       }
-    });
+    }
+  });
+
+  document.addEventListener("closeModal", (e) => {
+    const modalId = e.detail?.modalId || null;
+
+    if (modalId) {
+      const slider = sliders[modalId];
+      slider.destroy();
+    }
   });
 
   setTimeout(() => {

@@ -53,25 +53,25 @@ export function openModal(targetID, target) {
   modal.classList.add("modal--visible");
   window.DOM.hideScroll();
 
-  const details = { detail: null };
+  const details = { detail: { modalId: targetID } };
   if (target.dataset.openSelected) {
-    details.detail = target.dataset.openSelected;
+    details.detail.openSelected = target.dataset.openSelected;
   }
-
   // dispatch event each time modal is visible
   let openModalEvent = new CustomEvent("openModal", details);
-
   document.dispatchEvent(openModalEvent);
 }
 
 export function closeModal() {
+  const targetID = window.DOM.modalActive.id;
   window.DOM.modalActive.classList.remove("modal--visible");
   window.DOM.modalActive.classList.remove("modal--success");
   window.DOM.modalActive = null;
   setTimeout(() => {
     window.DOM.showScroll();
-    // dispatch event each time modal is closed
-    let closeModalEvent = new CustomEvent("closeModal");
+
+    const details = targetID ? { detail: { modalId: targetID } } : undefined;
+    let closeModalEvent = new CustomEvent("closeModal", details);
     document.dispatchEvent(closeModalEvent);
   }, 300);
   document.body.removeEventListener("touchmove", preventMobileScroll);

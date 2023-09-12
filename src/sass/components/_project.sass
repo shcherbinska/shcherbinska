@@ -1,83 +1,107 @@
+$r-desktop: 24px
+$r-mobile: 14px
+
 .project
 	position: relative
-	border-radius: 50%
+	border-radius: $r-desktop
+	overflow: hidden
 	&:hover
-		.project__content
-			color: $main
-			background: $decor
+		.project__overlay
+			opacity: 1
+		.project__img img
+			transform: scale(1.04)
+	+r($l-mobile)
+		border-radius: $r-mobile
 
-.project__content
+.project__img
 	position: absolute
 	top: 0
 	left: 0
 	z-index: 0
-	display: flex
-	justify-content: center
-	align-items: center
-	align-content: center
-	flex-wrap: wrap
 	width: 100%
 	height: 100%
-	padding: 10px
-	border-radius: 50%
-	color: $white
-	background: $main
-	cursor: pointer
-	transition: color 0.25s ease, background 0.3s ease
-	+r($l-mobile)
-		padding: 5px
+	border-radius: inherit
+	overflow: hidden
+	img
+		position: absolute
+		top: 0
+		left: 0
+		width: 100%
+		height: 100%
+		object-fit: cover
+		border-radius: inherit
+		will-change: transform
+		transform-origin: 50% 50%
+		transition: transform 0.2s
 
-.project__title
-	width: 100%
-	margin-bottom: 10px
-	font-size: 32px
-	text-align: center
-	text-transform: uppercase
-	+r(1600)
-		font-size: 29px
-	+r($m-desktop)
-		margin-bottom: 8px
-		font-size: 24px
-	+r(1200)
-		font-size: 20px
-	+r($tablet)
-		font-size: 17px
-	+r($m-tablet)
-		font-size: 19px
-	+r($l-mobile)
-		margin-bottom: 5px
-		font-size: 20px
-	+r($s-mobile - 1)
-		font-size: 16px
-
-.project__author
-	width: 100%
-	text-align: center
-	font-size: 26px
-	+r(1600)
-		font-size: 24px
-	+r($m-desktop)
-		font-size: 20px
-	+r(1200)
-		font-size: 16px
-	+r($tablet)
-		font-size: 14px
-	+r($m-tablet)
-		font-size: 16px
-	+r($l-mobile)
-		font-size: 15px
-	+r($s-mobile - 1)
-		font-size: 13px
-
-.project__btn
+.project__overlay
 	position: absolute
 	top: 0
 	left: 0
 	z-index: 1
 	width: 100%
 	height: 100%
-	border-radius: 50%
+	background: rgba($main, 0.2)
+	border-radius: inherit
+	opacity: 0
+	transition: opacity 0.2s
+
+.project__content
+	position: absolute
+	bottom: 0
+	left: 0
+	z-index: 2
+	display: flex
+	justify-content: flex-end
+	align-items: center
+	flex-wrap: nowrap
+	width: 100%
+	padding: 10px min(1vw, 20px) 11px
+	border-radius: $r-desktop
+	border-top-right-radius: 0
+	border-top-left-radius: 0
+	color: $white
+	background: rgba($main, 40%)
+	cursor: pointer
+	transition: color 0.25s ease, background 0.3s ease
+	+r($tablet)
+		padding: 10px min(1.5vw, 16px) 11px
+	+r($l-mobile)
+		padding: 10px 15px 11px
+		border-radius: $r-mobile
+		border-top-right-radius: 0
+		border-top-left-radius: 0
+
+.project__title
+	margin-right: min(0.5vw, 10px)
+	font-size: min(1.1vw, 21px)
+	font-weight: 400
+	text-transform: uppercase
+	&:last-child
+		margin-right: 0
+	+r($tablet)
+		font-size: min(1.2vw, 13px)
+	+r($l-mobile)
+		margin-right: 8px
+		font-size: 12px
+
+.project__author
+	font-size: min(1vw, 20px)
+	font-weight: 300
+	+r($l-mobile)
+		font-size: 11px
+
+.project__btn
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 3
+	width: 100%
+	height: 100%
+	border-radius: $r-desktop
 	&:focus
 		& + .project__content
 			color: $main
 			background: $decor
+	+r($l-mobile)
+		border-radius: $r-mobile

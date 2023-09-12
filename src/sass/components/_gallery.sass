@@ -1,6 +1,10 @@
 .gallery
+	--gallery-sign-height: 120px
 	display: flex
 	align-items: center
+	flex-direction: column
+	align-content: center
+	justify-content: center
 	width: 100%
 	height: 100%
 	+r($l-mobile)
@@ -9,18 +13,21 @@
 .gallery__slider
 	width: 100%
 	height: 100%
-	max-height: 690px
+	max-height: calc(690px - var(--gallery-sign-height))
+	+r($l-mobile)
+		max-height: calc(590px - var(--gallery-sign-height))
 
 .gallery__item
 	position: relative
 	width: 100%
 	height: 100%
-	& > img
+	& > img, & > video
 		position: absolute
 		top: 0
 		left: 0
 		width: 100%
 		height: 100%
+		// max-height: calc(690px - var(--gallery-sign-height))
 		object-fit: contain
 		font-family: "object-fit: contain;"
 
@@ -42,12 +49,12 @@
 	display: block
 	width: 50px
 	height: 100%
-	color: $white
+	color: $main
 	opacity: 0.6
 	cursor: pointer
-	transition: color 0.3s ease
+	transition: opacity 0.2s ease
 	&:hover
-		color: $grey
+		opacity: 0.4
 	&::before
 		content: ''
 		position: absolute
@@ -59,6 +66,7 @@
 		border-top: 2px solid currentColor
 		border-right: 2px solid currentColor
 		transform: rotate(45deg)
+		filter: drop-shadow(0px 0px 1px white)
 	&--next
 		left: auto
 		right: 0
@@ -71,3 +79,18 @@
 	&--disabled
 		cursor: default
 		opacity: 0.3
+
+.gallery__sign
+	width: 100%
+	height: var(--gallery-sign-height)
+	max-width: 960px
+	margin: 0 auto
+	padding: 26px 26px 0
+	user-select: none
+	+r($l-mobile)
+		padding: 15px 15px 0
+	img
+		width: 100%
+		height: 100%
+		object-fit: contain
+		object-position: top

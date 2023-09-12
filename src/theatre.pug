@@ -1,0 +1,11 @@
+extends ./templates/_skeleton
+
+block vars
+	- var title = "Theatre by Olga Shcherbinskaya"
+	- var currentPage = "Theatre"
+
+block content
+	include ./templates/sections/theatre/_content.pug
+
+block modals
+	include ./templates/sections/theatre/_modals.pug
