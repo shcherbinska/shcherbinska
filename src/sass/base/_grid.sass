@@ -1,6 +1,17 @@
+$width-desktop: 80%
+$width-tablet: 90%
+
 .container
-	width: 80%
+	width: $width-desktop
 	max-width: $max-content-width
 	margin: 0 auto
 	+r($tablet)
-		width: 90%
+		width: $width-tablet
+	&--left
+		$margin: calc((100% - min($width-desktop, $max-content-width)) / 2)
+		width: calc(min($width-desktop, $max-content-width) + $margin)
+		max-width: none
+		margin-right: 0
+		+r($tablet)
+			$margin: calc((100% - min($width-tablet, $max-content-width)) / 2)
+			width: calc(min($width-tablet, $max-content-width) + $margin)
