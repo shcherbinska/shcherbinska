@@ -20,8 +20,10 @@ mixin modals(modals = [])
 									.swiper-slide.gallery__item
 										img.swiper-lazy(data-src=`${imagePath}${i}.jpg`, alt="")
 								- i++;
-						.gallery__button.gallery__button--prev
-						.gallery__button.gallery__button--next
+						.gallery__buttons
+							.gallery__button.gallery__button--prev
+							.gallery__pagination
+							.gallery__button.gallery__button--next
 					if sign
 						.gallery__sign.sign!=sign
 

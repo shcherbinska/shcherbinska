@@ -8,12 +8,13 @@
 	width: 100%
 	height: 100%
 	+r($l-mobile)
-		padding: 60px 15px 30px
+		padding: 40px 15px 30px
 
 .gallery__slider
 	width: 100%
 	height: 100%
 	max-height: calc(690px - var(--gallery-sign-height))
+	padding-bottom: 36px
 	+r($l-mobile)
 		max-height: calc(590px - var(--gallery-sign-height))
 
@@ -27,7 +28,6 @@
 		left: 0
 		width: 100%
 		height: 100%
-		// max-height: calc(690px - var(--gallery-sign-height))
 		object-fit: contain
 		font-family: "object-fit: contain;"
 
@@ -41,37 +41,56 @@
 	background: linear-gradient(0deg, black, transparent)
 	color: white
 
-.gallery__button
+.gallery__buttons
 	position: absolute
-	top: 0
 	left: 0
+	bottom: 0
 	z-index: 1
-	display: block
-	width: 50px
-	height: 100%
+	display: flex
+	justify-content: center
+	width: 100%
+	height: 30px
+
+.gallery__pagination
+	display: flex
+	align-items: center
+	justify-content: center
+	width: 60px
+	padding-top: 5px
+	font-family: $manjari
+	font-weight: 400
+	line-height: 1
+	font-size: 16px
+	+r($l-mobile)
+		width: 46px
+		padding-top: 4px
+		font-size: 15px
+
+.gallery__button
+	position: relative
+	width: 30px
+	height: 30px
 	color: $main
 	opacity: 0.6
 	cursor: pointer
 	transition: opacity 0.2s ease
-	&:hover
-		opacity: 0.4
+	+notouch
+		&:hover
+			opacity: 0.4
 	&::before
 		content: ''
 		position: absolute
-		top: calc(50% - 17px)
-		left: 18px
+		top: calc(50% - 6px)
+		left: 12px
 		display: block
-		width: 35px
-		height: 35px
+		width: 11px
+		height: 11px
 		border-top: 2px solid currentColor
 		border-right: 2px solid currentColor
 		transform: rotate(45deg)
-		filter: drop-shadow(0px 0px 1px white)
 	&--next
-		left: auto
-		right: 0
 		&::before
-			left: 0
+			left: 6px
 			transform: rotate(45deg)
 	&--prev
 		&::before
@@ -85,7 +104,7 @@
 	height: var(--gallery-sign-height)
 	max-width: 960px
 	margin: 0 auto
-	padding: 26px 26px 0
+	padding: 16px 26px 0
 	user-select: none
 	+r($l-mobile)
 		padding: 15px 15px 0

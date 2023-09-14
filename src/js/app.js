@@ -37,6 +37,10 @@ document.addEventListener("DOMContentLoaded", () => {
           prevEl: ".gallery__button--prev",
           disabledClass: "gallery__button--disabled",
         },
+        pagination: {
+          el: ".gallery__pagination",
+          type: "fraction",
+        },
       });
       slider.update();
       sliders[modalId] = slider;
