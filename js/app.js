@@ -8930,6 +8930,10 @@
               nextEl: ".gallery__button--next",
               prevEl: ".gallery__button--prev",
               disabledClass: "gallery__button--disabled"
+            },
+            pagination: {
+              el: ".gallery__pagination",
+              type: "fraction"
             }
           });
           slider.update();
