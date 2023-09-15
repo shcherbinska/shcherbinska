@@ -889,6 +889,11 @@ button.swiper-pagination-bullet {
     box-shadow: 4px 4px 4px 0 rgba(171, 168, 168, 0.2);
   }
 }
+@media only screen and (max-width: 650px) {
+  .main-nav {
+    padding: 4px 0 6px;
+  }
+}
 
 .main-nav__inner {
   position: relative;
@@ -959,6 +964,8 @@ button.swiper-pagination-bullet {
   .main-nav__list {
     top: calc(100% - 50px);
     width: 100%;
+    padding-top: 16px;
+    padding-bottom: 20px;
     background: #c9caca;
     box-shadow: 0px 4px 6px 0px rgba(171, 168, 168, 0.2);
   }
@@ -1033,7 +1040,6 @@ button.swiper-pagination-bullet {
 @media only screen and (max-width: 650px) {
   .main-nav__item {
     width: calc(90% - 60px);
-    margin-left: 5%;
   }
 }
 .main-nav__item a, .main-nav__item > span {
@@ -1089,8 +1095,8 @@ button.swiper-pagination-bullet {
 .main-nav__toggle {
   position: relative;
   z-index: 11;
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   display: none;
 }
 @media only screen and (max-width: 1024px) {
@@ -1101,10 +1107,10 @@ button.swiper-pagination-bullet {
 
 .main-nav__toggle-inner {
   position: absolute;
-  top: 32px;
+  top: 26px;
   left: 10%;
   width: 80%;
-  height: 4px;
+  height: 3px;
   transition-delay: 0.13s;
   transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19);
   transition-duration: 0.13s;
@@ -1117,7 +1123,7 @@ button.swiper-pagination-bullet {
   position: absolute;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 3px;
   transition-timing-function: ease;
   transition-duration: 0.15s;
   transition-property: transform;
@@ -1125,11 +1131,10 @@ button.swiper-pagination-bullet {
   background-color: #000;
 }
 .main-nav__toggle-inner::before {
-  top: -10px;
+  top: -9px;
 }
 .main-nav__toggle-inner::after {
-  top: -20px;
-  bottom: -10px;
+  top: -18px;
   transition: top 0.2s cubic-bezier(0.33333, 0.66667, 0.66667, 1) 0.2s, opacity 0.1s linear;
 }
 
@@ -1151,9 +1156,8 @@ button.swiper-pagination-bullet {
 }
 @media only screen and (max-width: 650px) {
   .main-nav__social {
-    width: calc(90% - 10px);
+    width: calc(90% - 6px);
     margin-left: 5%;
-    padding-left: 20px;
   }
   .main-nav__social .social {
     gap: 8px 10px;
@@ -1696,12 +1700,12 @@ button.swiper-pagination-bullet {
 .gallery__slider {
   width: 100%;
   height: 100%;
-  max-height: calc(690px - var(--gallery-sign-height));
+  max-height: 726px;
   padding-bottom: 36px;
 }
 @media only screen and (max-width: 650px) {
   .gallery__slider {
-    max-height: calc(590px - var(--gallery-sign-height));
+    max-height: calc(690px - var(--gallery-sign-height));
   }
 }
 
@@ -1802,7 +1806,7 @@ button.swiper-pagination-bullet {
 
 .gallery__sign {
   width: 100%;
-  height: var(--gallery-sign-height);
+  max-height: var(--gallery-sign-height);
   max-width: 960px;
   margin: 0 auto;
   padding: 16px 26px 0;
@@ -1842,7 +1846,7 @@ button.swiper-pagination-bullet {
 @media only screen and (max-width: 650px) {
   .about {
     padding-top: 32px;
-    padding-bottom: 24px;
+    padding-bottom: 18px;
   }
 }
 
@@ -2032,8 +2036,13 @@ button.swiper-pagination-bullet {
 }
 @media only screen and (max-width: 650px) {
   .history__title {
-    margin-bottom: 12px;
-    font-size: 16px;
+    margin-bottom: 18px;
+    padding: 6px 6px 3px;
+    text-align: left;
+    font-size: 14px;
+    line-height: 1;
+    color: #030403;
+    background-color: #c9caca;
   }
   .history__title:not(:first-of-type) {
     margin-top: 24px;

@@ -8923,7 +8923,7 @@
             watchOverflow: true,
             keyboard: true,
             autoplay: {
-              delay: 3000
+              delay: 2000
             },
             effect: "fade",
             navigation: {
