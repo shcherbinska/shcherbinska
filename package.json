@@ -18,7 +18,7 @@
     "gulp-postcss": "^9.0.1",
     "gulp-pug": "^5.0.0",
     "gulp-sass": "^5.1.0",
-    "postcss": "^8.4.12",
+    "postcss": "^8.5.28",
     "rollup": "^1.26.3",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
